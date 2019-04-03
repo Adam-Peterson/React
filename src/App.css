@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+.image-list{
+  list-style-type: none;
+  display: inline-block;
+}
+
+
+.product-image{
+  width: 4em;
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  margin-right: 1rem;
+  padding: 10px;
+  box-shadow: 0 0 10px inset #000000;
+}
+
+.main-image{
+  display: inline;
+}

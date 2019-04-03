@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import iApple from './images/apple.jpg'
+import iBag from './images/bag.jpg'
+import iBalloon from './images/balloon.jpg'
+import iBananas from './images/bananas.jpg'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       'counter': 2,
+      currentImage: iApple,
     }
   }
+
+  changeImage = (img) => {
+    this.setState((state, props) => ({
+        currentImage: img,
+      }))}
+
   render() {
     return (
       <div className="App">
@@ -26,7 +37,24 @@ class App extends Component {
               })
             }
           }>Increment Counter</button>
-          <p>
+                  </header>
+
+            <div className="image-list">
+              <ul className="image-list">
+
+            
+
+
+          <li><img src={iApple} className="product-image" onClick={(e) => this.changeImage(iApple)}/></li>
+          <li><img src={iBag} className="product-image" onClick={(e) => this.changeImage(iBag)}/></li>
+          <li><img src={iBalloon} className="product-image" onClick={(e) => this.changeImage(iBalloon)}/></li>
+          <li><img src={iBananas} className="product-image" onClick={(e) => this.changeImage(iBananas)}/></li>
+          </ul>
+          <li><img src={this.state.currentImage} className="main-image"/></li>
+
+          </div>
+
+          {/* <p>
             Edit <code>src/App.js</code> filler.
           </p>
           <a
@@ -36,8 +64,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
-        </header>
+          </a> */}
       </div>
     );
   }
