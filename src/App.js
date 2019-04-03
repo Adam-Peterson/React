@@ -6,6 +6,14 @@ import iBag from './images/bag.jpg'
 import iBalloon from './images/balloon.jpg'
 import iBananas from './images/bananas.jpg'
 
+const IMAGES = [
+  iApple,
+  iBag,
+  iBalloon,
+  iBananas,
+
+]
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -37,20 +45,22 @@ class App extends Component {
               })
             }
           }>Increment Counter</button>
-                  </header>
+          </header>
 
             <div className="image-list">
               <ul className="image-list">
 
-            
+            {IMAGES.map((img, i)=>{
+              return (<li><img src={img} className="product-image" onClick={(e) => this.changeImage(img)}/></li>)
+            })}
 
 
-          <li><img src={iApple} className="product-image" onClick={(e) => this.changeImage(iApple)}/></li>
+          {/* <li><img src={iApple} className="product-image" onClick={(e) => this.changeImage(iApple)}/></li>
           <li><img src={iBag} className="product-image" onClick={(e) => this.changeImage(iBag)}/></li>
           <li><img src={iBalloon} className="product-image" onClick={(e) => this.changeImage(iBalloon)}/></li>
-          <li><img src={iBananas} className="product-image" onClick={(e) => this.changeImage(iBananas)}/></li>
+          <li><img src={iBananas} className="product-image" onClick={(e) => this.changeImage(iBananas)}/></li> */
+          <li><img src={this.state.currentImage} className="main-image"/></li>}
           </ul>
-          <li><img src={this.state.currentImage} className="main-image"/></li>
 
           </div>
 
